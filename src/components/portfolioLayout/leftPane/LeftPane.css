@@ -1,0 +1,85 @@
+.left-pane {
+  align-self: start;
+}
+
+@media (min-width: 1025px) {
+  .left-pane {
+    position: fixed;
+    top: var(--layout-pad-y);
+    left: calc((100vw - min(100vw, var(--max-width))) / 2 + var(--layout-pad-x));
+    width: calc(
+      (min(100vw, var(--max-width)) - (var(--layout-pad-x) * 2) - var(--layout-gap)) *
+        var(--left-ratio)
+    );
+    height: calc(100vh - (var(--layout-pad-y) * 2));
+    overflow-y: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.left-pane__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 24rem;
+}
+
+.left-pane__eyebrow {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #94a3b8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.left-pane__name {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  color: #f8fafc;
+}
+
+.left-pane__role {
+  margin: 0;
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+.left-pane__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.left-pane__nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.left-pane__nav a:hover,
+.left-pane__nav a:focus-visible {
+  color: #f8fafc;
+}
+
+@media (max-width: 1024px) {
+  .left-pane {
+    position: static;
+    height: auto;
+    padding: 0;
+  }
+
+  .left-pane__content {
+    max-width: none;
+    gap: 0.75rem;
+  }
+
+  .left-pane__nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    margin-top: 0.75rem;
+  }
+}

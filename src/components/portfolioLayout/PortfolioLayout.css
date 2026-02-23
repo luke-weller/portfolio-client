@@ -1,0 +1,41 @@
+:root {
+  --max-width: 1280px;
+  --layout-pad-x: 6rem;
+  --layout-pad-y: 3rem;
+  --layout-gap: 2rem;
+  --left-ratio: 0.48;
+}
+
+.portfolio-layout {
+  width: min(100%, var(--max-width));
+  box-sizing: border-box;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: var(--layout-pad-y) var(--layout-pad-x);
+  display: grid;
+  grid-template-columns: minmax(260px, calc(100% * var(--left-ratio))) minmax(0, 1fr);
+  column-gap: var(--layout-gap);
+  align-items: start;
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --layout-pad-x: 3rem;
+    --layout-pad-y: 2rem;
+    --layout-gap: 1.5rem;
+  }
+
+  .portfolio-layout {
+    padding: var(--layout-pad-y) var(--layout-pad-x);
+    column-gap: var(--layout-gap);
+  }
+}
+
+@media (max-width: 1024px) {
+  .portfolio-layout {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+    gap: 2rem;
+    min-height: auto;
+  }
+}

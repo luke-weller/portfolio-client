@@ -1,0 +1,100 @@
+.portfolio-card {
+  display: grid;
+  grid-template-columns: minmax(90px, 120px) minmax(0, 1fr);
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  background: transparent;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease,
+    box-shadow 180ms ease, transform 180ms ease, opacity 180ms ease;
+}
+
+.portfolio-card__meta {
+  margin: 0.1rem 0 0;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portfolio-card__body {
+  min-width: 0;
+}
+
+.portfolio-card__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  color: #e2e8f0;
+  font-size: 1rem;
+  line-height: 1.4;
+  transition: color 180ms ease;
+}
+
+.portfolio-card__arrow {
+  display: inline-block;
+  transition: transform 180ms ease;
+}
+
+.portfolio-card__description {
+  margin: 0.45rem 0 0;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.portfolio-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.portfolio-card__tag {
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: #5eead4;
+  background: rgba(45, 212, 191, 0.14);
+}
+
+.portfolio-card:hover,
+.portfolio-card:focus-within {
+  background: rgba(30, 41, 59, 0.45);
+  border-color: rgba(148, 163, 184, 0.2);
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.35);
+  transform: translateY(-2px);
+}
+
+.portfolio-card:hover .portfolio-card__title,
+.portfolio-card:focus-within .portfolio-card__title {
+  color: #5eead4;
+}
+
+.portfolio-card:hover .portfolio-card__arrow,
+.portfolio-card:focus-within .portfolio-card__arrow {
+  transform: translate(3px, -3px);
+}
+
+.card-list:hover .portfolio-card {
+  opacity: 0.55;
+}
+
+.card-list:hover .portfolio-card:hover,
+.card-list:hover .portfolio-card:focus-within {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .portfolio-card {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+}
