@@ -1,5 +1,39 @@
 :root {
-  background: #0f172a;
+  background: var(--bg-primary);
   min-height: 100vh;
   width: 100%;
+}
+
+.App-body {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+}
+
+.App-body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--spotlight-opacity);
+  transition: opacity 220ms ease;
+  background: radial-gradient(
+    var(--spotlight-size) circle at var(--cursor-x) var(--cursor-y),
+    rgba(68, 110, 160, 0.2) 0%,
+    rgba(68, 110, 160, 0.12) 26%,
+    rgba(68, 110, 160, 0.05) 45%,
+    transparent 70%
+  );
+}
+
+.App-body > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .App-body::before {
+    display: none;
+  }
 }

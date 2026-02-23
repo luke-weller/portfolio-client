@@ -28,7 +28,7 @@
 .left-pane__eyebrow {
   margin: 0;
   font-size: 0.875rem;
-  color: #94a3b8;
+  color: var(--text-muted);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -37,13 +37,13 @@
   margin: 0;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.05;
-  color: #f8fafc;
+  color: var(--text-primary);
 }
 
 .left-pane__role {
   margin: 0;
   font-size: 1rem;
-  color: #cbd5e1;
+  color: var(--text-secondary);
 }
 
 .left-pane__nav {
@@ -54,14 +54,14 @@
 }
 
 .left-pane__nav a {
-  color: #94a3b8;
+  color: var(--text-muted);
   text-decoration: none;
   transition: color 180ms ease;
 }
 
 .left-pane__nav a:hover,
 .left-pane__nav a:focus-visible {
-  color: #f8fafc;
+  color: var(--text-primary);
 }
 
 @media (max-width: 1024px) {

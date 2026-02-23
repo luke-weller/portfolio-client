@@ -1,7 +1,7 @@
 import "./RightPane.css";
 import CardListSection from "../../portfolio/CardListSection";
-import { experienceData } from "../../../data/portfolio/experienceData";
-import { projectData } from "../../../data/portfolio/projectData";
+import { experienceData } from "../../../data/experienceData";
+import { projectData } from "../../../data/projectData";
 
 function RightPane() {
   return (
@@ -14,8 +14,12 @@ function RightPane() {
         </p>
       </section>
 
-      <CardListSection id="experience" heading="Experience" items={experienceData} />
-      <CardListSection id="projects" heading="Projects" items={projectData} />
+      <section id="experience" className="right-pane__section">
+        <CardListSection items={experienceData} />
+      </section>
+      <section id="projects" className="right-pane__section">
+        <CardListSection items={projectData} />
+      </section>
     </section>
   );
 }

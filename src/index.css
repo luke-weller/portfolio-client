@@ -4,6 +4,22 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-primary: #0b1220;
+  --text-primary: #e6edf7;
+  --text-secondary: #c4cfde;
+  --text-muted: #8fa1b8;
+  --surface-hover: rgba(39, 52, 74, 0.5);
+  --surface-border: rgba(148, 163, 184, 0.24);
+  --surface-shadow: rgba(2, 6, 23, 0.4);
+  --accent: #67d3ff;
+  --accent-soft: rgba(56, 189, 248, 0.18);
+  --cursor-x: 50vw;
+  --cursor-y: 50vh;
+  --spotlight-size: 760px;
+  --spotlight-opacity: 0;
+}
+
 html,
 body,
 #root {
@@ -15,6 +31,8 @@ body,
 
 body {
   margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

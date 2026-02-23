@@ -16,7 +16,7 @@
 .portfolio-card__meta {
   margin: 0.1rem 0 0;
   font-size: 0.75rem;
-  color: #94a3b8;
+  color: var(--text-muted);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -30,7 +30,7 @@
   align-items: center;
   gap: 0.35rem;
   margin: 0;
-  color: #e2e8f0;
+  color: var(--text-primary);
   font-size: 1rem;
   line-height: 1.4;
   transition: color 180ms ease;
@@ -43,7 +43,7 @@
 
 .portfolio-card__description {
   margin: 0.45rem 0 0;
-  color: #94a3b8;
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
@@ -60,21 +60,21 @@
   padding: 0.2rem 0.65rem;
   border-radius: 999px;
   font-size: 0.75rem;
-  color: #5eead4;
-  background: rgba(45, 212, 191, 0.14);
+  color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .portfolio-card:hover,
 .portfolio-card:focus-within {
-  background: rgba(30, 41, 59, 0.45);
-  border-color: rgba(148, 163, 184, 0.2);
-  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.35);
+  background: var(--surface-hover);
+  border-color: var(--surface-border);
+  box-shadow: 0 8px 30px var(--surface-shadow);
   transform: translateY(-2px);
 }
 
 .portfolio-card:hover .portfolio-card__title,
 .portfolio-card:focus-within .portfolio-card__title {
-  color: #5eead4;
+  color: var(--accent);
 }
 
 .portfolio-card:hover .portfolio-card__arrow,
