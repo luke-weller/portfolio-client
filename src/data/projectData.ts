@@ -9,12 +9,4 @@ export const projectData: CardProps[] = [
     href: "https://example.com",
     tags: ["React", "CSS", "Accessibility"],
   },
-  {
-    period: "Case Study",
-    title: "Analytics Dashboard",
-    description:
-      "Built a responsive dashboard with robust state management and data visualization for non-technical stakeholders.",
-    href: "https://example.com",
-    tags: ["TypeScript", "Charts", "UX"],
-  },
 ];

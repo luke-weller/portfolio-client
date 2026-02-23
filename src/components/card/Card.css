@@ -26,9 +26,7 @@
 }
 
 .portfolio-card__title {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
+  display: inline;
   margin: 0;
   color: var(--text-primary);
   font-size: 1rem;
@@ -38,7 +36,14 @@
 
 .portfolio-card__arrow {
   display: inline-block;
+  margin-left: 0.35rem;
   transition: transform 180ms ease;
+}
+
+.portfolio-card__title-tail {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
 }
 
 .portfolio-card__description {
@@ -89,6 +94,28 @@
 .card-list:hover .portfolio-card:hover,
 .card-list:hover .portfolio-card:focus-within {
   opacity: 1;
+}
+
+.portfolio-card--inactive {
+  cursor: default;
+}
+
+.portfolio-card--inactive:hover,
+.portfolio-card--inactive:focus-within {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.portfolio-card--inactive:hover .portfolio-card__title,
+.portfolio-card--inactive:focus-within .portfolio-card__title {
+  color: var(--text-primary);
+}
+
+.portfolio-card--inactive:hover .portfolio-card__arrow,
+.portfolio-card--inactive:focus-within .portfolio-card__arrow {
+  transform: none;
 }
 
 @media (max-width: 768px) {

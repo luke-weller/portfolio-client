@@ -6,9 +6,9 @@
 
 :root {
   --bg-primary: #0b1220;
-  --text-primary: #e6edf7;
-  --text-secondary: #c4cfde;
-  --text-muted: #8fa1b8;
+  --text-primary: #cfd8e3;
+  --text-secondary: #a8b3c7;
+  --text-muted: #8693ab;
   --surface-hover: rgba(39, 52, 74, 0.5);
   --surface-border: rgba(148, 163, 184, 0.24);
   --surface-shadow: rgba(2, 6, 23, 0.4);
@@ -29,6 +29,10 @@ body,
   min-height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background: var(--bg-primary);
@@ -38,6 +42,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 65ch;
 }
 
 code {
