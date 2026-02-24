@@ -45,7 +45,7 @@
     grid-column: 1;
     margin-top: 18.5rem;
     padding-top: 0;
-    gap: 3rem;
+    gap: 4rem;
     padding-bottom: 1.5rem;
   }
 
@@ -53,8 +53,19 @@
     scroll-margin-top: 1.25rem;
   }
 
+  .right-pane__section p {
+    max-width: none;
+  }
+
   .right-pane__footer {
     margin-top: 0;
     font-size: 0.875rem;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .right-pane__footer {
+    max-width: none;
   }
 }

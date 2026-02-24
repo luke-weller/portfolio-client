@@ -170,6 +170,10 @@
 }
 
 @media (max-width: 1024px) {
+  .portfolio-card__description {
+    max-width: none;
+  }
+
   .portfolio-card:hover::before {
     background: transparent;
     border-color: transparent;
