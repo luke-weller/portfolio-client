@@ -32,6 +32,14 @@
   gap: 0.5rem;
 }
 
+.right-pane__footer {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  max-width: 60ch;
+}
+
 @media (max-width: 1024px) {
   .right-pane {
     grid-column: 1;
@@ -42,5 +50,10 @@
 
   .right-pane__section {
     scroll-margin-top: 1.25rem;
+  }
+
+  .right-pane__footer {
+    margin-top: 0;
+    font-size: 0.875rem;
   }
 }

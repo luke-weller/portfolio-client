@@ -29,7 +29,7 @@ export const experienceData: CardProps[] = [
     description:
       "Delivered software for European clients in agile, international teams, translating complex requirements into production systems across frontend and backend services with a focus on reliability and maintainability.",
     href: "https://netcompany.com",
-    tags: [".NET", "React", "Node.js", "AWS"],
+    tags: [".NET", "React", "Node.js", "AWS", "Azure"],
   },
   {
     period: "2018 - 2020",

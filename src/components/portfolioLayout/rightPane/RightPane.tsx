@@ -16,18 +16,32 @@ function RightPane() {
           product thinking meets maintainable code and scalable systems.
         </p>
         <p>
-          Currently, I build healthcare products at Levrx in a backend-focused
-          full stack role, delivering configurable workflow tooling,
-          third-party/webhook integrations, and web/mobile interfaces that
-          support insurance-aware medication journeys.
+          Currently, I build healthcare products at{" "}
+          <a href="https://www.levrx.com/" target="_blank" rel="noreferrer">
+            Levrx
+          </a>{" "}
+          in a backend-focused full stack role, delivering configurable workflow
+          tooling, third-party/webhook integrations, and web/mobile interfaces
+          that support insurance-aware medication journeys.
         </p>
         <p>
-          Earlier in my career, I worked across consulting, agency, and product
-          teams, including leading end-to-end delivery as a freelance founder
-          and contributing as a UX/UI designer before moving fully into
-          engineering. Relocating from England to the United States also gave me
-          a fresh perspective on adaptability, ownership, and building for
-          real-world users.
+          Earlier in my career at{" "}
+          <a
+            href="https://www.netcompany.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Netcompany
+          </a>
+          , I worked across consulting, agency, and product teams, including
+          leading end-to-end delivery as a freelance founder and contributing as
+          a{" "}
+          <a href="https://www.nngroup.com" target="_blank" rel="noreferrer">
+            UX designer
+          </a>{" "}
+          before moving fully into engineering. Relocating from England to the
+          United States also gave me a fresh perspective on adaptability,
+          ownership, and building for real-world users.
         </p>
         <p>
           Outside of work, parenting is my passion and primary focus. Raising my
@@ -40,6 +54,41 @@ function RightPane() {
       <section id="experience" className="right-pane__section">
         <CardListSection items={experienceData} />
       </section>
+
+      <footer className="right-pane__footer">
+        Created by yours truly with{" "}
+        <a href="https://react.dev/" target="_blank" rel="noreferrer">
+          React
+        </a>
+        ,{" "}
+        <a
+          href="https://www.typescriptlang.org/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Typescript
+        </a>
+        , custom{" "}
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+          target="_blank"
+          rel="noreferrer"
+        >
+          CSS
+        </a>
+        , with a little help from{" "}
+        <a href="https://cursor.com/" target="_blank" rel="noreferrer">
+          cursor
+        </a>{" "}
+        and{" "}
+        <a
+          href="https://code.visualstudio.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Visual Studio Code
+        </a>
+      </footer>
     </section>
   );
 }
