@@ -104,6 +104,11 @@
   transform: scale(1);
 }
 
+.left-pane__nav-link--active .left-pane__nav-dot {
+  background: var(--accent);
+  opacity: 1;
+}
+
 .left-pane__nav-link:focus-visible {
   outline: 1px solid var(--surface-border);
   outline-offset: 2px;
