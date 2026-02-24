@@ -88,8 +88,8 @@ function LeftPane() {
     <aside className="left-pane">
       <div className="left-pane__content">
         <h1 className="left-pane__name">Luke Weller</h1>
-        <h2 className="left-pane__role">Full Stack Developer</h2>
-        <p className="left-pane__role">
+        <h2 className="left-pane__title">Full Stack Developer</h2>
+        <p className="left-pane__summary">
           Full-stack engineer who builds reliable products end to end, with a
           strong foundation in UX/UI.
         </p>

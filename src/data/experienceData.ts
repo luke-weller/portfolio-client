@@ -39,4 +39,18 @@ export const experienceData: CardProps[] = [
     href: "https://www.flightcentre.co.uk",
     tags: ["UX/UI", "Figma", "Sketch", "A/B Testing", "Design Systems", "WCAG"],
   },
+  {
+    period: "2017 - 2018",
+    title: "Corporate Account Manager · Flight Centre Travel Group",
+    description:
+      "Managed SME corporate travel accounts with annual spend from £2k to £500k, owning B2B relationships, itinerary strategy, lead generation, and competitive bid wins. This role strengthened my commercial judgment and stakeholder management, and became a key step in my transition into UX and later software engineering.",
+    href: "https://www.flightcentre.co.uk/p/business",
+    tags: [
+      "B2B Sales",
+      "Account Management",
+      "Lead Generation",
+      "Stakeholder Management",
+      "Business Strategy",
+    ],
+  },
 ];

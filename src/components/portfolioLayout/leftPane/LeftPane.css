@@ -40,7 +40,15 @@
   color: var(--text-primary);
 }
 
-.left-pane__role {
+.left-pane__title {
+  margin: 0.15rem 0 0;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.left-pane__summary {
   margin: 0;
   font-size: 1rem;
   color: var(--text-secondary);
@@ -133,7 +141,7 @@
 
 .left-pane__social-list {
   margin: auto 0 0;
-  padding: 0;
+  padding: 1.25rem 0 0;
   list-style: none;
   display: flex;
   gap: 1.50rem;
@@ -206,7 +214,7 @@
   }
 
   .left-pane__social-list {
-    margin-top: 0.75rem;
+    margin-top: 1.25rem;
     gap: 1.1rem;
   }
 
