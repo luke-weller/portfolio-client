@@ -66,6 +66,13 @@
   white-space: nowrap;
 }
 
+.portfolio-card__location {
+  margin: 0.3rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.90rem;
+  line-height: 1.35;
+}
+
 .portfolio-card__description {
   margin: 0.45rem 0 0;
   color: var(--text-secondary);

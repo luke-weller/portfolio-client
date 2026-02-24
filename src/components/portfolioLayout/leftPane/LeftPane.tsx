@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { type MouseEvent, useEffect, useState } from "react";
 import "./LeftPane.css";
 
 const navSections = [
@@ -75,14 +75,32 @@ function LeftPane() {
     syncActiveSection();
     globalThis.addEventListener("scroll", syncActiveSection, { passive: true });
     globalThis.addEventListener("resize", syncActiveSection);
-    globalThis.addEventListener("hashchange", syncActiveSection);
 
     return () => {
       globalThis.removeEventListener("scroll", syncActiveSection);
       globalThis.removeEventListener("resize", syncActiveSection);
-      globalThis.removeEventListener("hashchange", syncActiveSection);
     };
   }, []);
+
+  const handleNavClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    sectionId: (typeof navSections)[number]["id"],
+  ) => {
+    event.preventDefault();
+    setActiveSection(sectionId);
+
+    const section = document.getElementById(sectionId);
+    if (!section) {
+      return;
+    }
+
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+    globalThis.history.replaceState(
+      null,
+      "",
+      `${globalThis.location.pathname}${globalThis.location.search}`,
+    );
+  };
 
   return (
     <aside className="left-pane">
@@ -103,7 +121,7 @@ function LeftPane() {
                 href={`#${id}`}
                 className={`left-pane__nav-link${isActive ? " left-pane__nav-link--active" : ""}`}
                 aria-current={isActive ? "location" : undefined}
-                onClick={() => setActiveSection(id)}
+                onClick={(event) => handleNavClick(event, id)}
               >
                 <span className="left-pane__nav-label">{label}</span>
                 <span className="left-pane__nav-dot" aria-hidden="true" />

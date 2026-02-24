@@ -3,12 +3,20 @@ import "./Card.css";
 export type CardProps = {
   period: string;
   title: string;
-  description: string;
+  location?: string;
+  description?: string;
   href?: string;
   tags?: string[];
 };
 
-function Card({ period, title, description, href, tags = [] }: Readonly<CardProps>) {
+function Card({
+  period,
+  title,
+  location,
+  description,
+  href,
+  tags = [],
+}: Readonly<CardProps>) {
   const isInteractive = Boolean(href);
   const cardClassName = `portfolio-card${isInteractive ? "" : " portfolio-card--inactive"}`;
   const titleParts = title.trim().split(/\s+/);
@@ -30,6 +38,7 @@ function Card({ period, title, description, href, tags = [] }: Readonly<CardProp
             )}
           </span>
         </h3>
+        {location && <p className="portfolio-card__location">{location}</p>}
         <p className="portfolio-card__description">{description}</p>
         {tags.length > 0 && (
           <ul className="portfolio-card__tags" aria-label="Technologies used">
