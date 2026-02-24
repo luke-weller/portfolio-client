@@ -96,7 +96,15 @@ function RightPane() {
         >
           Brittany Chiang
         </a>{" "}
-        for inspriation for this design.
+        for design inspriation and{" "}
+        <a
+          href="https://codepen.io/mr_alien/pen/NWygPw"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Mr Alien
+        </a>{" "}
+        for the awesome loading animation.
       </footer>
     </section>
   );
