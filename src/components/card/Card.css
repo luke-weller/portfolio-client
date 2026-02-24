@@ -73,7 +73,7 @@
 }
 
 .portfolio-card:hover,
-.portfolio-card:focus-within {
+.portfolio-card:focus-visible {
   background: var(--surface-hover);
   border-color: var(--surface-border);
   box-shadow: 0 8px 30px var(--surface-shadow);
@@ -81,12 +81,12 @@
 }
 
 .portfolio-card:hover .portfolio-card__title,
-.portfolio-card:focus-within .portfolio-card__title {
+.portfolio-card:focus-visible .portfolio-card__title {
   color: var(--accent);
 }
 
 .portfolio-card:hover .portfolio-card__arrow,
-.portfolio-card:focus-within .portfolio-card__arrow {
+.portfolio-card:focus-visible .portfolio-card__arrow {
   transform: translate(3px, -3px);
 }
 
@@ -95,7 +95,7 @@
 }
 
 .card-list:hover .portfolio-card:hover,
-.card-list:hover .portfolio-card:focus-within {
+.card-list:hover .portfolio-card:focus-visible {
   opacity: 1;
 }
 
@@ -104,7 +104,7 @@
 }
 
 .portfolio-card--inactive:hover,
-.portfolio-card--inactive:focus-within {
+.portfolio-card--inactive:focus-visible {
   background: transparent;
   border-color: transparent;
   box-shadow: none;
@@ -112,12 +112,12 @@
 }
 
 .portfolio-card--inactive:hover .portfolio-card__title,
-.portfolio-card--inactive:focus-within .portfolio-card__title {
+.portfolio-card--inactive:focus-visible .portfolio-card__title {
   color: var(--text-primary);
 }
 
 .portfolio-card--inactive:hover .portfolio-card__arrow,
-.portfolio-card--inactive:focus-within .portfolio-card__arrow {
+.portfolio-card--inactive:focus-visible .portfolio-card__arrow {
   transform: none;
 }
 
