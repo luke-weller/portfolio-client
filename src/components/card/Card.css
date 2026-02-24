@@ -8,6 +8,7 @@
   border-radius: 0.75rem;
   background: transparent;
   color: inherit;
+  font-weight: 400;
   text-decoration: none;
   transition: background-color 180ms ease, border-color 180ms ease,
     box-shadow 180ms ease, transform 180ms ease, opacity 180ms ease;
@@ -48,8 +49,10 @@
 
 .portfolio-card__description {
   margin: 0.45rem 0 0;
-  color: var(--text-muted);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
   line-height: 1.6;
+  max-width: 65ch;
 }
 
 .portfolio-card__tags {

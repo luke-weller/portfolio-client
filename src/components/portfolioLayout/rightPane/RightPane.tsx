@@ -78,7 +78,7 @@ function RightPane() {
         </a>
         , with a little help from{" "}
         <a href="https://cursor.com/" target="_blank" rel="noreferrer">
-          cursor
+          Cursor
         </a>{" "}
         and{" "}
         <a
@@ -88,6 +88,7 @@ function RightPane() {
         >
           Visual Studio Code
         </a>
+        .
       </footer>
     </section>
   );
