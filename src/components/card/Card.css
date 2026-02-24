@@ -1,17 +1,36 @@
 .portfolio-card {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(90px, 120px) minmax(0, 1fr);
   gap: 1rem;
   width: 100%;
-  padding: 1rem;
-  border: 1px solid transparent;
-  border-radius: 0.75rem;
+  padding: 1rem 0;
+  border: 0;
+  border-radius: 0;
   background: transparent;
   color: inherit;
   font-weight: 400;
   text-decoration: none;
+  transition: opacity 180ms ease;
+}
+
+.portfolio-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 -1rem;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  background: transparent;
+  box-shadow: none;
+  transform: translateY(0);
+  pointer-events: none;
   transition: background-color 180ms ease, border-color 180ms ease,
-    box-shadow 180ms ease, transform 180ms ease, opacity 180ms ease;
+    box-shadow 180ms ease, transform 180ms ease;
+}
+
+.portfolio-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .portfolio-card__meta {
@@ -74,6 +93,11 @@
 
 .portfolio-card:hover,
 .portfolio-card:focus-visible {
+  color: inherit;
+}
+
+.portfolio-card:hover::before,
+.portfolio-card:focus-visible::before {
   background: var(--surface-hover);
   border-color: var(--surface-border);
   box-shadow: 0 8px 30px var(--surface-shadow);
@@ -105,10 +129,15 @@
 
 .portfolio-card--inactive:hover,
 .portfolio-card--inactive:focus-visible {
+  color: inherit;
+}
+
+.portfolio-card--inactive:hover::before,
+.portfolio-card--inactive:focus-visible::before {
   background: transparent;
   border-color: transparent;
   box-shadow: none;
-  transform: none;
+  transform: translateY(0);
 }
 
 .portfolio-card--inactive:hover .portfolio-card__title,
@@ -125,6 +154,10 @@
   .portfolio-card {
     grid-template-columns: 1fr;
     gap: 0.5rem;
-    padding: 0.75rem;
+    padding: 0.75rem 0;
+  }
+
+  .portfolio-card::before {
+    inset: 0 -0.65rem;
   }
 }

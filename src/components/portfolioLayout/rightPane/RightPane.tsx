@@ -88,7 +88,15 @@ function RightPane() {
         >
           Visual Studio Code
         </a>
-        .
+        . Notable mention to{" "}
+        <a
+          href="https://v4.brittanychiang.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Brittany Chiang
+        </a>{" "}
+        for inspriation for this design.
       </footer>
     </section>
   );
