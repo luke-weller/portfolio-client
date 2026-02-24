@@ -168,3 +168,24 @@
     inset: 0 -0.65rem;
   }
 }
+
+@media (max-width: 1024px) {
+  .portfolio-card:hover::before {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .portfolio-card:hover .portfolio-card__title {
+    color: var(--text-primary);
+  }
+
+  .portfolio-card:hover .portfolio-card__arrow {
+    transform: none;
+  }
+
+  .card-list:hover .portfolio-card {
+    opacity: 1;
+  }
+}

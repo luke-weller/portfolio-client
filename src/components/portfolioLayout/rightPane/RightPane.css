@@ -43,6 +43,7 @@
 @media (max-width: 1024px) {
   .right-pane {
     grid-column: 1;
+    margin-top: 18.5rem;
     padding-top: 0;
     gap: 3rem;
     padding-bottom: 1.5rem;
