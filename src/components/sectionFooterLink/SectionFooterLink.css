@@ -1,0 +1,27 @@
+.section-footer-link {
+  margin: 1rem 0 0;
+}
+
+.section-footer-link a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.section-footer-link__arrow {
+  display: inline-block;
+  transition: transform 180ms ease;
+}
+
+.section-footer-link a:hover,
+.section-footer-link a:focus-visible {
+  color: var(--accent);
+}
+
+.section-footer-link a:hover .section-footer-link__arrow,
+.section-footer-link a:focus-visible .section-footer-link__arrow {
+  transform: translate(3px, -3px);
+}

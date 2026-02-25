@@ -1,6 +1,7 @@
 import "./RightPane.css";
 import CardListSection from "./CardListSection";
 import { experienceData } from "../../../data/experienceData";
+import SectionFooterLink from "../../sectionFooterLink/SectionFooterLink";
 
 function RightPane() {
   return (
@@ -34,8 +35,8 @@ function RightPane() {
           >
             Netcompany
           </a>
-          , I worked across consulting, agency, and product teams. I’ve also
-          led end-to-end delivery as a freelance founder and worked as a{" "}
+          , I worked across consulting, agency, and product teams. I’ve also led
+          end-to-end delivery as a freelance founder and worked as a{" "}
           <a href="https://www.nngroup.com" target="_blank" rel="noreferrer">
             UX designer
           </a>{" "}
@@ -53,6 +54,10 @@ function RightPane() {
 
       <section id="experience" className="right-pane__section">
         <CardListSection items={experienceData} />
+        <SectionFooterLink
+          href="https://www.linkedin.com/in/wellerluke/details/experience/"
+          label="See my non-technical background"
+        />
       </section>
 
       <footer className="right-pane__footer">
