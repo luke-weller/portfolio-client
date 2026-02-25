@@ -2,6 +2,8 @@
   --loader-bg: var(--bg-primary);
   --loader-fg: var(--text-primary);
   --loader-line: var(--accent);
+  --flame-orange: #ff9f43;
+  --flame-red: #ff4d4f;
   position: fixed;
   inset: 0;
   z-index: 12;
@@ -48,11 +50,20 @@
 .intro-body > span {
   height: 5px;
   width: 35px;
-  background: var(--loader-fg);
   position: absolute;
   top: -19px;
   left: 60px;
   border-radius: 2px 10px 1px 0;
+  isolation: isolate;
+}
+
+.intro-body > span::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--loader-fg);
+  border-radius: inherit;
+  z-index: 2;
 }
 
 .intro-base span {
@@ -117,24 +128,33 @@
 .intro-body > span > span:nth-child(4) {
   width: 30px;
   height: 1px;
-  background: var(--loader-fg);
+  background: #ff9f43;
+  box-shadow: 0 0 6px #ff9f43;
   position: absolute;
+  top: 2px;
+  z-index: 1;
   animation: intro-fazer1 0.2s linear infinite;
 }
 
 .intro-body > span > span:nth-child(2) {
   top: 3px;
+  background: #ff4d4f;
+  box-shadow: 0 0 6px #ff4d4f;
   animation: intro-fazer2 0.4s linear infinite;
 }
 
 .intro-body > span > span:nth-child(3) {
-  top: 1px;
+  top: 2px;
+  background: #ff9f43;
+  box-shadow: 0 0 6px #ff9f43;
   animation: intro-fazer3 0.4s linear infinite;
   animation-delay: -1s;
 }
 
 .intro-body > span > span:nth-child(4) {
   top: 4px;
+  background: #ff4d4f;
+  box-shadow: 0 0 6px #ff4d4f;
   animation: intro-fazer4 1s linear infinite;
   animation-delay: -1s;
 }

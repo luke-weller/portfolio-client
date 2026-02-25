@@ -1,5 +1,5 @@
 import "./RightPane.css";
-import CardListSection from "../../portfolio/CardListSection";
+import CardListSection from "./CardListSection";
 import { experienceData } from "../../../data/experienceData";
 
 function RightPane() {

@@ -1,4 +1,4 @@
-import Card, { type CardProps } from "../card/Card";
+import Card, { type CardProps } from "../../card/Card";
 
 type CardListSectionProps = {
   items: CardProps[];
