@@ -33,6 +33,7 @@ pnpm-debug.log*
 .cache/
 .parcel-cache/
 .eslintcache
+.yarn/install-state.gz
 *.tsbuildinfo
 .tmp/
 tmp/
