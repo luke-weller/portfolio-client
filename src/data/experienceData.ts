@@ -4,7 +4,7 @@ export const experienceData: CardProps[] = [
   {
     period: "2024 - Present",
     title: "Full Stack Engineer · Levrx Technology Inc.",
-    location: "Upsate New York, USA",
+    location: "Troy, New York, USA",
     description:
       "Building healthcare products in a backend-focused full stack role, including configurable status-tracking workflows, third-party/webhook integrations, and web/mobile interfaces that support insurance-aware medication journeys.",
     href: "https://levrx.com",
