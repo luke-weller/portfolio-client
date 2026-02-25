@@ -1,4 +1,4 @@
-import { type MouseEvent, useEffect, useState } from "react";
+import { type MouseEvent, useEffect, useRef, useState } from "react";
 import type {
   NavSection,
   PortfolioSectionId,
@@ -58,6 +58,8 @@ const socialLinks = [
 function LeftPane() {
   const [activeSection, setActiveSection] =
     useState<PortfolioSectionId>("about");
+  const [isMobileNavPinned, setIsMobileNavPinned] = useState(false);
+  const navSentinelRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const sections = navSections
@@ -94,6 +96,41 @@ function LeftPane() {
     };
   }, []);
 
+  useEffect(() => {
+    const getPinOffset = () => {
+      const rootFontSize = Number.parseFloat(
+        globalThis.getComputedStyle(document.documentElement).fontSize,
+      );
+      return (Number.isNaN(rootFontSize) ? 16 : rootFontSize) * 0.75;
+    };
+
+    const syncNavPinState = () => {
+      if (globalThis.innerWidth > 1024) {
+        setIsMobileNavPinned(false);
+        return;
+      }
+
+      const sentinel = navSentinelRef.current;
+      if (!sentinel) {
+        return;
+      }
+
+      const shouldPin = sentinel.getBoundingClientRect().top <= getPinOffset();
+      setIsMobileNavPinned((current) =>
+        current === shouldPin ? current : shouldPin,
+      );
+    };
+
+    syncNavPinState();
+    globalThis.addEventListener("scroll", syncNavPinState, { passive: true });
+    globalThis.addEventListener("resize", syncNavPinState);
+
+    return () => {
+      globalThis.removeEventListener("scroll", syncNavPinState);
+      globalThis.removeEventListener("resize", syncNavPinState);
+    };
+  }, []);
+
   const handleNavClick = (
     event: MouseEvent<HTMLAnchorElement>,
     sectionId: PortfolioSectionId,
@@ -124,7 +161,19 @@ function LeftPane() {
           designs reliable products end to end.
         </p>
 
-        <nav className="left-pane__nav" aria-label="Section navigation">
+        <div className="left-pane__nav-sentinel" ref={navSentinelRef} aria-hidden="true" />
+        <div
+          className={`left-pane__nav-overlay${isMobileNavPinned ? " left-pane__nav-overlay--active" : ""}`}
+          aria-hidden="true"
+        />
+        <div
+          className={`left-pane__nav-spacer${isMobileNavPinned ? " left-pane__nav-spacer--active" : ""}`}
+          aria-hidden="true"
+        />
+        <nav
+          className={`left-pane__nav${isMobileNavPinned ? " left-pane__nav--pinned" : ""}`}
+          aria-label="Section navigation"
+        >
           {navSections.map(({ id, label }) => {
             const isActive = activeSection === id;
             return (

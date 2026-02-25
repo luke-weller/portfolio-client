@@ -61,6 +61,12 @@
   margin-top: 1.5rem;
 }
 
+.left-pane__nav-sentinel,
+.left-pane__nav-spacer,
+.left-pane__nav-overlay {
+  display: none;
+}
+
 .left-pane__nav-link {
   position: relative;
   display: grid;
@@ -168,7 +174,7 @@
 @media (max-width: 1024px) {
   .left-pane {
     position: static;
-    padding: 1.5rem 0 1.1rem;
+    padding: 4rem 0 1.1rem;
   }
 
   .left-pane__content {
@@ -181,8 +187,44 @@
     order: 2;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     gap: 0.75rem 1rem;
     margin-top: 0.75rem;
+    padding: 0.4rem 0.35rem;
+    border-radius: 0.75rem;
+  }
+
+  .left-pane__nav-sentinel {
+    display: block;
+    order: 2;
+    height: 0;
+  }
+
+  .left-pane__nav-overlay--active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: calc(env(safe-area-inset-top, 0px) + 4.75rem);
+    background: var(--bg-primary);
+    z-index: 7;
+  }
+
+  .left-pane__nav-spacer--active {
+    display: block;
+    order: 2;
+    height: 3.1rem;
+  }
+
+  .left-pane__nav--pinned {
+    position: fixed;
+    top: calc(env(safe-area-inset-top, 0px) + 0.75rem);
+    left: 1.25rem;
+    right: 1.25rem;
+    margin-top: 0;
+    z-index: 8;
+    background: var(--bg-primary);
   }
 
   .left-pane__nav-link {
