@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import "./IntroLoader.css";
 
-function IntroLoader() {
+type IntroLoaderProps = {
+  onComplete?: () => void;
+};
+
+function IntroLoader({ onComplete }: Readonly<IntroLoaderProps>) {
   const [showIntro, setShowIntro] = useState(true);
   const [isIntroExiting, setIsIntroExiting] = useState(false);
 
@@ -12,13 +16,14 @@ function IntroLoader() {
 
     const hideTimeoutId = globalThis.setTimeout(() => {
       setShowIntro(false);
+      onComplete?.();
     }, 2950);
 
     return () => {
       globalThis.clearTimeout(exitTimeoutId);
       globalThis.clearTimeout(hideTimeoutId);
     };
-  }, []);
+  }, [onComplete]);
 
   if (!showIntro) {
     return null;

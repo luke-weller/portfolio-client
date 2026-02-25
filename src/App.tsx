@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import IntroLoader from "./components/introLoader/IntroLoader";
 import PortfolioLayout from "./components/portfolioLayout/PortfolioLayout";
 
 function App() {
+  const [isRevealActive, setIsRevealActive] = useState(false);
+
   useEffect(() => {
     const root = document.documentElement;
     let rafId: number | null = null;
@@ -45,9 +47,17 @@ function App() {
     };
   }, []);
 
+  const handleIntroComplete = () => {
+    globalThis.requestAnimationFrame(() => {
+      setIsRevealActive(true);
+    });
+  };
+
   return (
-    <div className="App-body">
-      <IntroLoader />
+    <div
+      className={`App-body App-body--staged${isRevealActive ? " App-body--reveal" : ""}`}
+    >
+      <IntroLoader onComplete={handleIntroComplete} />
       <PortfolioLayout />
     </div>
   );
