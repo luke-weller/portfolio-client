@@ -4,6 +4,8 @@
   --loader-line: var(--accent);
   --flame-orange: #ff9f43;
   --flame-red: #ff4d4f;
+  --smoke-light: rgba(228, 234, 242, 0.4);
+  --smoke-dark: rgba(193, 203, 218, 0.3);
   position: fixed;
   inset: 0;
   z-index: 12;
@@ -80,7 +82,7 @@
   inset: 0;
   background: var(--loader-fg);
   border-radius: inherit;
-  z-index: 2;
+  z-index: 4;
 }
 
 .intro-base span {
@@ -149,8 +151,41 @@
   box-shadow: 0 0 6px #ff9f43;
   position: absolute;
   top: 2px;
-  z-index: 1;
+  z-index: 2;
   animation: intro-fazer1 0.2s linear infinite;
+}
+
+.intro-body > span > span::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: -0.5px;
+  width: 18px;
+  height: 1px;
+  background: #ffd76a;
+  box-shadow: 0 0 5px #ffd76a;
+  border-radius: 999px;
+}
+
+.intro-body > span > span::after {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: -1px;
+  width: 42px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--smoke-light) 38%,
+    var(--smoke-dark) 100%
+  );
+  filter: blur(1.2px);
+  opacity: 0.85;
+  border-radius: 999px;
+  z-index: 1;
+  transform-origin: left center;
+  animation: intro-smoke-plume 0.2s linear infinite;
 }
 
 .intro-body > span > span:nth-child(2) {
@@ -158,6 +193,37 @@
   background: #ff4d4f;
   box-shadow: 0 0 6px #ff4d4f;
   animation: intro-fazer2 0.4s linear infinite;
+}
+
+.intro-body > span > span:nth-child(2)::after,
+.intro-body > span > span:nth-child(4)::after {
+  opacity: 0.7;
+}
+
+.intro-body > span > span:nth-child(2)::after {
+  animation-duration: 0.4s;
+}
+
+.intro-body > span > span:nth-child(3)::after {
+  animation-duration: 0.4s;
+  animation-delay: -1s;
+}
+
+.intro-body > span > span:nth-child(4)::after {
+  animation-duration: 1s;
+  animation-delay: -1s;
+}
+
+@keyframes intro-smoke-plume {
+  0%,
+  72% {
+    width: 42px;
+    transform: scaleY(1);
+  }
+  100% {
+    width: 66px;
+    transform: scaleY(2.4);
+  }
 }
 
 .intro-body > span > span:nth-child(3) {
