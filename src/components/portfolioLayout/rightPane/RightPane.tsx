@@ -10,19 +10,20 @@ function RightPane() {
         className="right-pane__section right-pane__section--about"
       >
         <p>
-          I am a full stack engineer focused on building thoughtful,
-          user-friendly products with clean, reliable architecture. I enjoy
-          working at the intersection of UX and engineering, where strong
-          product thinking meets maintainable code and scalable systems.
+          I’m a full stack engineer who loves building thoughtful products that
+          feel good to use and stay reliable behind the scenes. I do my best
+          work where UX and engineering overlap, turning messy real-world
+          problems into clean, practical experiences.
         </p>
         <p>
-          Currently, I build healthcare products at{" "}
+          Right now, I build healthcare products at{" "}
           <a href="https://www.levrx.com/" target="_blank" rel="noreferrer">
             Levrx
           </a>{" "}
-          in a backend-focused full stack role, delivering configurable workflow
+          in a backend-focused full stack role. That means configurable workflow
           tooling, third-party/webhook integrations, and web/mobile interfaces
-          that support insurance-aware medication journeys.
+          that help people navigate complex, insurance-aware medication journeys
+          with less friction.
         </p>
         <p>
           Earlier in my career at{" "}
@@ -33,21 +34,20 @@ function RightPane() {
           >
             Netcompany
           </a>
-          , I worked across consulting, agency, and product teams, including
-          leading end-to-end delivery as a freelance founder and contributing as
-          a{" "}
+          , I worked across consulting, agency, and product teams. I’ve also
+          led end-to-end delivery as a freelance founder and worked as a{" "}
           <a href="https://www.nngroup.com" target="_blank" rel="noreferrer">
             UX designer
           </a>{" "}
           before moving fully into engineering. Relocating from England to the
-          United States also gave me a fresh perspective on adaptability,
-          ownership, and building for real-world users.
+          U.S. gave me an even stronger respect for adaptability, ownership, and
+          designing for real people, not ideal scenarios.
         </p>
         <p>
-          Outside of work, parenting is my passion and primary focus. Raising my
-          twin daughters to be kind, curious, and confident is the most
-          rewarding challenge I’ve ever taken on. I also enjoy traveling,
-          experiencing new cultures, and playing the guitar.
+          Outside work, parenting is my favorite role. Raising twin daughters to
+          be kind, curious, and confident is the most rewarding challenge I’ve
+          taken on. I also love traveling, discovering new cultures, and picking
+          up the guitar whenever I can.
         </p>
       </section>
 

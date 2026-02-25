@@ -44,7 +44,7 @@ function IntroLoader({ onComplete }: Readonly<IntroLoaderProps>) {
           </div>
           <div className="intro-face" />
         </div>
-        <p className="intro-status">Taking you to my portfolo</p>
+        <p className="intro-status">Jetpacking to my portfolio...</p>
       </div>
       <div className="intro-longfazers" aria-hidden="true">
         <span />
