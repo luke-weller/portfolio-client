@@ -1,6 +1,6 @@
-import type { CardProps } from "../components/card/Card";
+import type { PortfolioCard } from "../types/portfolio";
 
-export const educationData: CardProps[] = [
+export const educationData = [
   {
     period: "2020 - 2021",
     title: "Master's Degree, Computer Science",
@@ -11,4 +11,4 @@ export const educationData: CardProps[] = [
     title: "Bachelor's Degree, Business",
     location: "University of Kent, Canterbury, England",
   },
-];
+] satisfies PortfolioCard[];

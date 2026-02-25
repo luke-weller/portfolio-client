@@ -1,13 +1,5 @@
 import "./Card.css";
-
-export type CardProps = {
-  period: string;
-  title: string;
-  location?: string;
-  description?: string;
-  href?: string;
-  tags?: string[];
-};
+import type { PortfolioCard } from "../../types/portfolio";
 
 function Card({
   period,
@@ -16,7 +8,7 @@ function Card({
   description,
   href,
   tags = [],
-}: Readonly<CardProps>) {
+}: Readonly<PortfolioCard>) {
   const isInteractive = Boolean(href);
   const cardClassName = `portfolio-card${isInteractive ? "" : " portfolio-card--inactive"}`;
   const titleParts = title.trim().split(/\s+/);

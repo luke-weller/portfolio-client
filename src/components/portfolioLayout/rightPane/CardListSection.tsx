@@ -1,8 +1,5 @@
-import Card, { type CardProps } from "../../card/Card";
-
-type CardListSectionProps = {
-  items: CardProps[];
-};
+import type { CardListSectionProps } from "../../../types/portfolio";
+import Card from "../../card/Card";
 
 function CardListSection({ items }: Readonly<CardListSectionProps>) {
   return (

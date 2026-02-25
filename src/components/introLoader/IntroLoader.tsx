@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
+import type { IntroLoaderProps } from "../../types/app";
 import "./IntroLoader.css";
-
-type IntroLoaderProps = {
-  onComplete?: () => void;
-};
 
 function IntroLoader({ onComplete }: Readonly<IntroLoaderProps>) {
   const [showIntro, setShowIntro] = useState(true);

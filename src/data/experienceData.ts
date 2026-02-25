@@ -1,6 +1,6 @@
-import type { CardProps } from "../components/card/Card";
+import type { PortfolioCard } from "../types/portfolio";
 
-export const experienceData: CardProps[] = [
+export const experienceData = [
   {
     period: "2024 - Present",
     title: "Full Stack Engineer · Levrx Technology Inc.",
@@ -55,4 +55,4 @@ export const experienceData: CardProps[] = [
       "Stakeholder Management",
     ],
   },
-];
+] satisfies PortfolioCard[];

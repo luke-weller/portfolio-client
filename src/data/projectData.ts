@@ -1,6 +1,6 @@
-import type { CardProps } from "../components/card/Card";
+import type { PortfolioCard } from "../types/portfolio";
 
-export const projectData: CardProps[] = [
+export const projectData = [
   {
     period: "Featured Project",
     title: "Portfolio Platform",
@@ -9,4 +9,4 @@ export const projectData: CardProps[] = [
     href: "https://example.com",
     tags: ["React", "CSS", "Accessibility"],
   },
-];
+] satisfies PortfolioCard[];

@@ -1,13 +1,23 @@
 import { type MouseEvent, useEffect, useState } from "react";
+import type {
+  NavSection,
+  PortfolioSectionId,
+  SocialLink,
+} from "../../../types/portfolio";
 import "./LeftPane.css";
 
 const navSections = [
   { id: "about", label: "About" },
   { id: "experience", label: "Work Experience" },
-] as const;
+] as const satisfies readonly NavSection[];
+
+function isNavSectionId(value: string): value is PortfolioSectionId {
+  return navSections.some((section) => section.id === value);
+}
 
 const socialLinks = [
   {
+    platform: "linkedin",
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/wellerluke/",
     icon: (
@@ -24,6 +34,7 @@ const socialLinks = [
     ),
   },
   {
+    platform: "github",
     name: "GitHub",
     href: "https://github.com/luke-weller",
     icon: (
@@ -33,6 +44,7 @@ const socialLinks = [
     ),
   },
   {
+    platform: "instagram",
     name: "Instagram",
     href: "https://www.instagram.com/lukedweller/",
     icon: (
@@ -41,11 +53,11 @@ const socialLinks = [
       </svg>
     ),
   },
-] as const;
+] as const satisfies readonly SocialLink[];
 
 function LeftPane() {
   const [activeSection, setActiveSection] =
-    useState<(typeof navSections)[number]["id"]>("about");
+    useState<PortfolioSectionId>("about");
 
   useEffect(() => {
     const sections = navSections
@@ -58,12 +70,12 @@ function LeftPane() {
 
     const syncActiveSection = () => {
       const marker = globalThis.scrollY + 140;
-      let nextActive: (typeof navSections)[number]["id"] = navSections[0].id;
+      let nextActive: PortfolioSectionId = navSections[0].id;
 
       for (const section of sections) {
         const top = section.getBoundingClientRect().top + globalThis.scrollY;
-        if (top <= marker) {
-          nextActive = section.id as (typeof navSections)[number]["id"];
+        if (top <= marker && isNavSectionId(section.id)) {
+          nextActive = section.id;
         } else {
           break;
         }
@@ -84,7 +96,7 @@ function LeftPane() {
 
   const handleNavClick = (
     event: MouseEvent<HTMLAnchorElement>,
-    sectionId: (typeof navSections)[number]["id"],
+    sectionId: PortfolioSectionId,
   ) => {
     event.preventDefault();
     setActiveSection(sectionId);
