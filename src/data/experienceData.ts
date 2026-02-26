@@ -66,77 +66,77 @@ export const experienceData = [
     period: "2016",
     title:
       "Activity Programme Coordinator · Stafford House Study Holidays (UK)",
-    location: "Canterbury, England, United Kingdom",
+    location: "Canterbury, England",
     description:
       "Supported head-office operations by coordinating activity programmes and stock management for 10+ nationwide summer camps.",
   },
   {
     period: "2016",
     title: "Despatch Administrator & Progress Tracker · F.W. Mansfield & Son",
-    location: "Chartham, Canterbury, Kent",
+    location: "Canterbury, England",
     description:
       "Provided dispatch administration and progress tracking support for camp-related operations and logistics.",
   },
   {
     period: "2015",
     title: "Centre Manager · Xplore (Klub Group Ltd)",
-    location: "Finborough, Suffolk, UK",
+    location: "Suffolk, England",
     description:
       "Oversaw daily centre operations, staff performance, and logistical planning for a residential activity camp.",
   },
   {
     period: "2014 - 2015",
     title: "Health Advisor (Evening and Weekend) · NHS England",
-    location: "Ashford, Kent, United Kingdom",
+    location: "Ashford, England",
     description:
       "Delivered telephone triage support to the public, following strict healthcare procedures under time pressure.",
   },
   {
     period: "2014",
     title: "Centre Manager · Xplore (Klub Group Ltd)",
-    location: "Greater Reading Area, UK",
+    location: "Reading, England",
     description:
       "Managed day-to-day camp delivery, team coordination, and activity operations during a seasonal assignment.",
   },
   {
     period: "2014",
     title: "Voluntary Digital Marketing Intern · MidKent College",
-    location: "Maidstone, Kent, UK",
+    location: "Maidstone, England",
     description:
       "Contributed to social content, SEO basics, and campaign support within the college's digital marketing function.",
   },
   {
     period: "2014",
     title: "Customer Service Advisor (Weekend) · The Mall",
-    location: "Maidstone, Kent, UK",
+    location: "Maidstone, England",
     description:
       "Ran information desk support, ticket and gift card services, and day-to-day banking tasks for the shopping centre.",
   },
   {
     period: "2013",
     title: "Chief Instructor (Team Leader) · Xplore (Klub Group Ltd)",
-    location: "Great Finborough, Suffolk, United Kingdom",
+    location: "Suffolk, England",
     description:
       "Led activity instructors, supported safety and first-aid readiness, and acted as first point of contact across operations.",
   },
   {
     period: "2012 - 2013",
     title: "Administrator (Weekend) · DFS",
-    location: "Maidstone, Kent, UK",
+    location: "Maidstone, England",
     description:
       "Handled sales administration, customer communications, finance application processing, and end-of-day banking.",
   },
   {
     period: "2012",
     title: "Customer Service Advisor & Trainer · Dovetail Services",
-    location: "Sittingbourne, UK",
+    location: "Sittingbourne, England",
     description:
       "Provided call-centre customer support, met quality and volume targets, and trained temporary staff during peak periods.",
   },
   {
     period: "2010",
     title: "Sales Executive · Safestyle UK",
-    location: "Maidstone, Kent, UK",
+    location: "Maidstone, England",
     description:
       "Delivered door-to-door sales as part of a short-term assignment.",
   },
@@ -144,7 +144,7 @@ export const experienceData = [
     period: "2010",
     title:
       "Apprentice Activities Instructor & TEFL Teacher · Kingswood Education and Adventure",
-    location: "Overstrand, Norfolk, UK",
+    location: "Suffolk, England",
     description:
       "Delivered English lessons, activities, and excursions for international students aged 7-17.",
   },

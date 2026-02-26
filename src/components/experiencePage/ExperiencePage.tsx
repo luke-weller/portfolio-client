@@ -33,6 +33,7 @@ function ExperiencePage() {
               <th scope="col">Period</th>
               <th scope="col">Role</th>
               <th scope="col">Company</th>
+              <th scope="col">Location</th>
               <th scope="col">Snapshot</th>
             </tr>
           </thead>
@@ -45,6 +46,7 @@ function ExperiencePage() {
                   <td>{experience.period}</td>
                   <td>{role}</td>
                   <td>{company}</td>
+                  <td>{experience.location}</td>
                   <td>
                     {experience.description ?? experience.location ?? "—"}
                   </td>
