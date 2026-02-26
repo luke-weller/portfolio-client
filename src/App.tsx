@@ -1,13 +1,52 @@
 import { useEffect, useState } from "react";
-import type { AppRevealStage, SpotlightVarName, SpotlightVars } from "./types/app";
+import type {
+  AppRevealStage,
+  SpotlightVarName,
+  SpotlightVars,
+} from "./types/app";
 import "./App.css";
 import IntroLoader from "./components/introLoader/IntroLoader";
 import PortfolioLayout from "./components/portfolioLayout/PortfolioLayout";
+import ExperiencePage from "./components/experiencePage/ExperiencePage";
 
 const REVEAL_SEQUENCE_DURATION_MS = 3600;
+const INTRO_SEEN_STORAGE_KEY = "portfolio-intro-seen";
+
+const getHasSeenIntro = () => {
+  try {
+    return globalThis.sessionStorage.getItem(INTRO_SEEN_STORAGE_KEY) === "1";
+  } catch {
+    return false;
+  }
+};
+
+const isReloadNavigation = () => {
+  const navigationEntries =
+    globalThis.performance.getEntriesByType("navigation");
+  const navigationEntry = navigationEntries[0] as
+    | PerformanceNavigationTiming
+    | undefined;
+  return navigationEntry?.type === "reload";
+};
+
+const markIntroSeen = () => {
+  try {
+    globalThis.sessionStorage.setItem(INTRO_SEEN_STORAGE_KEY, "1");
+  } catch {
+    // Ignore storage access failures and keep default behavior.
+  }
+};
 
 function App() {
-  const [revealStage, setRevealStage] = useState<AppRevealStage>("idle");
+  const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+  const isExperienceArchiveRoute = currentPath === "/experience";
+  const [shouldRunIntro] = useState(
+    () => isReloadNavigation() || !getHasSeenIntro(),
+  );
+
+  const [revealStage, setRevealStage] = useState<AppRevealStage>(
+    shouldRunIntro ? "idle" : "done",
+  );
 
   useEffect(() => {
     const root = document.documentElement;
@@ -67,6 +106,16 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if (isExperienceArchiveRoute) {
+      markIntroSeen();
+    }
+  }, [isExperienceArchiveRoute]);
+
+  useEffect(() => {
+    if (isExperienceArchiveRoute) {
+      return undefined;
+    }
+
     if (revealStage !== "revealing") {
       return undefined;
     }
@@ -78,21 +127,32 @@ function App() {
     return () => {
       globalThis.clearTimeout(doneTimeoutId);
     };
-  }, [revealStage]);
+  }, [isExperienceArchiveRoute, revealStage]);
 
   const handleIntroComplete = () => {
+    markIntroSeen();
+
     globalThis.requestAnimationFrame(() => {
       setRevealStage("revealing");
     });
   };
 
-  const isRevealActive = revealStage !== "idle";
+  if (isExperienceArchiveRoute) {
+    return (
+      <div className="App-body">
+        <ExperiencePage />
+      </div>
+    );
+  }
+
+  const isRevealAnimationEnabled = shouldRunIntro;
+  const isRevealActive = isRevealAnimationEnabled && revealStage !== "idle";
 
   return (
     <div
-      className={`App-body App-body--staged${isRevealActive ? " App-body--reveal" : ""}`}
+      className={`App-body${isRevealAnimationEnabled ? " App-body--staged" : ""}${isRevealActive ? " App-body--reveal" : ""}`}
     >
-      <IntroLoader onComplete={handleIntroComplete} />
+      {shouldRunIntro && <IntroLoader onComplete={handleIntroComplete} />}
       <PortfolioLayout />
     </div>
   );

@@ -25,14 +25,6 @@
   max-width: 24rem;
 }
 
-.left-pane__eyebrow {
-  margin: 0;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .left-pane__name {
   margin: 0;
   font-size: clamp(2rem, 4vw, 3rem);

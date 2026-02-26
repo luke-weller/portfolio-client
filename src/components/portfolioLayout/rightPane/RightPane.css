@@ -19,13 +19,6 @@
   gap: 1rem;
 }
 
-.right-pane__heading {
-  margin: 0 0 1rem;
-  color: var(--text-primary);
-  font-size: 1.65rem;
-  line-height: 1.2;
-}
-
 .card-list {
   display: flex;
   flex-direction: column;

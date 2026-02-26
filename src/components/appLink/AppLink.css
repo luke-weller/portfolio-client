@@ -1,0 +1,28 @@
+.app-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.app-link__arrow {
+  display: inline-block;
+  transition: transform 180ms ease;
+}
+
+.app-link:hover,
+.app-link:focus-visible {
+  color: var(--accent);
+}
+
+.app-link--external:hover .app-link__arrow,
+.app-link--external:focus-visible .app-link__arrow {
+  transform: translate(3px, -3px);
+}
+
+.app-link--internal:hover .app-link__arrow,
+.app-link--internal:focus-visible .app-link__arrow {
+  transform: translateX(3px);
+}

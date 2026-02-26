@@ -1,6 +1,6 @@
 import "./RightPane.css";
 import CardListSection from "./CardListSection";
-import { experienceData } from "../../../data/experienceData";
+import { latestExperienceData } from "../../../data/experienceData";
 import SectionFooterLink from "../../sectionFooterLink/SectionFooterLink";
 
 function RightPane() {
@@ -53,10 +53,11 @@ function RightPane() {
       </section>
 
       <section id="experience" className="right-pane__section">
-        <CardListSection items={experienceData} />
+        <CardListSection items={latestExperienceData} />
         <SectionFooterLink
-          href="https://www.linkedin.com/in/wellerluke/details/experience/"
-          label="See my non-technical background"
+          href="/experience"
+          label="See full experience"
+          external={false}
         />
       </section>
 

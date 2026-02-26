@@ -1,19 +1,22 @@
 import "./SectionFooterLink.css";
+import AppLink from "../appLink/AppLink";
 
 type SectionFooterLinkProps = {
   href: string;
   label: string;
+  external?: boolean;
 };
 
-function SectionFooterLink({ href, label }: Readonly<SectionFooterLinkProps>) {
+function SectionFooterLink({
+  href,
+  label,
+  external = true,
+}: Readonly<SectionFooterLinkProps>) {
   return (
     <p className="section-footer-link">
-      <a href={href} target="_blank" rel="noreferrer">
-        <span>{label}</span>
-        <span className="section-footer-link__arrow" aria-hidden="true">
-          ↗
-        </span>
-      </a>
+      <AppLink href={href} kind={external ? "external" : "internal"}>
+        {label}
+      </AppLink>
     </p>
   );
 }
